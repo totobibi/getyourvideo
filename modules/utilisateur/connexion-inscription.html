@@ -1,0 +1,50 @@
+<div class="row" ng-controller="UtilisateurController as utilisateurCtrl">
+  <div class="panel radius" ng-controller="TabConnexionInscriptionController as tab">
+    <dl class="tabs" data-tab>
+      <dd ng-class="{active:tab.isSet(1)}"><a href="#" ng-click="tab.clickTab(1, $event)">Connexion</a></dd>
+      <dd ng-class="{active:tab.isSet(2)}"><a href="#" ng-click="tab.clickTab(2, $event)">Inscription</a></dd>
+    </dl>
+
+   
+    <div class="tabs-content">
+       
+      <!-- Contenu pour la connexion -->
+      <div class="content active" id="panel1" ng-show="tab.isSet(1)">
+        <form name="formConnexion" ng-submit="formConnexion.$valid && utilisateurCtrl.connexion()" novalidate>
+          <p>
+            <label for="pseudo">Identifiant :</label>
+            <input ng-model="utilisateurCtrl.utilisateur.id" type="text" id="pseudo" name="pseudo" required></input>
+          </p>
+          <p>
+            <label for="password">Mot de passe :</label>
+            <input ng-model="utilisateurCtrl.utilisateur.password" type="password" id="password" name="password" required></input>
+          </p>
+          <input type="submit" value="Se connecter" ng-show="formConnexion.$valid" />
+        </form>
+      </div>
+      
+      <!-- Contenu pour l'inscription -->
+      <div class="content active" id="panel2" ng-show="tab.isSet(2)">
+        <form name="formInscription" ng-submit="formConnexion.$valid && utilisateurCtrl.inscription()" novalidate>
+          <p>
+            <label for="pseudo">Identifiant :</label>
+            <input ng-model="utilisateurCtrl.utilisateur.id" type="text" id="pseudo" name="pseudo" required></input>
+          </p>
+
+          <p>
+            <label for="password">Mot de passe :</label>
+            <input ng-model="utilisateurCtrl.utilisateur.password" type="password" id="password" name="password" required></input>
+          </p>
+          <p>
+            <label for="confirmationPassword">Confirmation :</label>
+            <input type="password" id="confirmationPassword" name="confirmationPassword" required></input>
+          </p>
+          
+          <input type="submit" value="S'inscrire" ng-show="formInscription.$valid" />
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>

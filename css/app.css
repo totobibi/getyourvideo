@@ -1,0 +1,63 @@
+/* ################################### GLOBAL #########################################*/
+body{
+	background:url('../img/background.jpg') no-repeat;
+	background-attachment:fixed;
+	background-position: center;
+}
+
+h1{
+	text-align:left;
+}
+
+#topHeader a{
+	color:#333;
+}
+
+
+#topHeader a:hover{
+	color:#000;
+}
+
+.tab-bar {
+    background: none repeat scroll 0% 0% #008CBA;
+}
+
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
+
+.tab-bar .menu-icon {
+    background: none repeat scroll 0% 0% #e6e6e6;
+    border:1px solid #008CBA;
+}
+
+.tab-bar .menu-icon span:after {
+    box-shadow: 0px 0px 0px 1px #008CBA, 0px 7px 0px 1px #008CBA, 0px 14px 0px 1px #008CBA;
+}
+
+.left-off-canvas-menu {
+    background: none repeat scroll 0% 0% #008CBA;
+}
+
+#mainSec{
+	margin-top:5%;
+}
+
+#mainSec img {
+	margin-right:10px;
+}
+
+.complexes {
+	text-align: center;
+}
+
+/* Pour les formulaires */
+.ng-valid .ng-pristine {
+	border-color: green;
+}
+
+.ng-invalid .ng-pristine {
+	border-color: red;
+}
+
+/* ################################### Connexion / Inscription ################################ */

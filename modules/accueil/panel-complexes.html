@@ -1,0 +1,12 @@
+ <div class="row complexes">
+ 	<div class="medium-6 small-12 columns" ng-repeat="complexe in panelComplexeCtrl.complexes">
+		<div class="medium-12 columns">
+			 <a class="button large" href="#/{{ complexe.id }}">
+			  	<img ng-src="img/{{ complexe.logoUrl }}" />
+			 	{{ complexe.nom }}<hr/>
+			  	<span>{{ complexe.nbTerrains }} Terrains</span><br/>
+			  	{{ complexe.ouverture }}
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html ng-app="getyourvideo">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get your Video</title>
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+
+  <body>
+
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <nav class="tab-bar">
+          <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+          </section>
+
+          <section id="topHeader" class="middle tab-bar-section" ng-controller="HeaderController as headerCtrl">
+            <div class="row">
+              <h1 class="title small-12 medium-8 columns"><a href="#">Get Your Video</a></h1>
+              <div class="title small-4 medium-4 columns hide-for-small"><a ng-hide="utilisateurCourant.logged" href="#/connexion-inscription">Connexion / Inscription</a></div>
+              <div class="title small-4 medium-4 columns hide-for-small"><a ng-show="utilisateurCourant.logged" href="#/mon-compte">{{ utilisateurCourant.id }}</a></div>
+            </div>
+          </section>
+        </nav>
+
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li ng-hide="utilisateurCourant.logged"><a href="#/connexion-inscription">Connexion / Inscription</a></li>
+            <li ng-show="utilisateurCourant.logged"><a href="#/mon-compte">Mon compte</a></li>
+            <li ng-show="complexeCourant.id && utilisateurCourant.logged"><a href="#">Téléchargement</a></li>
+            <li ng-show="utilisateurCourant.logged"><a href="#/mon-cloud">Mon Cloud vidéo</a></li>
+          </ul>
+
+          <ul class="off-canvas-list" ng-controller="LiensComplexesController as liensCtrl">
+            <li><label>Web TV</label></li>
+            <li ng-repeat="complexe in liensCtrl.complexes">
+              <a href="#/{{ complexe.id }}">{{ complexe.nom }}</a>
+            </li>
+          </ul>
+        </aside>
+
+        <section id="mainSec" class="main-section">
+           <div ng-view></div>
+        </section>
+
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-cookies.min.js"></script>
+   
+    <script src="js/accueil.js"></script>
+    <script src="js/routeControllers.js"></script>
+    <script src="js/utilisateur.js"></script>
+    <script src="js/telechargement.js"></script>
+
+  </body>
+</html>
